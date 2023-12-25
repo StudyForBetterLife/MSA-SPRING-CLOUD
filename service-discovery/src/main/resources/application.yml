@@ -1,0 +1,11 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: discoveryservice
+
+eureka:
+  client:
+    register-with-eureka: false # 자기 자신(eureka)을 등록하지 않기 위해 false 설정
+    fetch-registry: false
