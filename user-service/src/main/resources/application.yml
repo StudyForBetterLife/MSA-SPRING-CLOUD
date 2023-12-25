@@ -1,0 +1,15 @@
+server:
+  port: 0 # random port 가 할당된다
+
+spring:
+  application:
+    name: user-service
+
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}} # 유레카에 보여질 인스턴스 아이디
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka # 8761번 포트의 어플리케이션 = 디스커버리 서비스
